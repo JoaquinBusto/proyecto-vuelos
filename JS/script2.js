@@ -12,7 +12,7 @@ let stockProductoB = 3
 
 let nombreProductoC = "Combo hospedaje + vuelo"
 let precioProductoC = 650
-let stockProductoC = 10
+let stockProductoC = 8
 
 //Compra 
 let productoCompra = prompt("Ingrese que producto quiere comprar: \n - Hospedaje\n - Vuelos\n - Combo")
