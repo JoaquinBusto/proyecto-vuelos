@@ -1,0 +1,38 @@
+* {
+  padding: 0px;
+  margin: 0px;
+  box-sizing: border-box; }
+
+/*index*/
+body {
+  background-color: #eeedee;
+  font-family: "Poppins", sans-serif;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-template-rows: 10% 20% 60% 10%;
+  height: 100vh; }
+
+header {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  grid-column: 1/3; }
+  header .avion {
+    width: 8%; }
+  header h1 {
+    text-shadow: 2px 2px #615b99; }
+
+.menu {
+  background-color: #9c9fcb;
+  border-radius: 0.5em;
+  display: flex;
+  justify-content: center;
+  margin: 8px; }
+  .menu .boton {
+    background-color: #9c9fcb; }
+
+.turismo {
+  grid-row: 2/3;
+  grid-column: 1/4;
+  display: flex;
+  justify-content: center; }
