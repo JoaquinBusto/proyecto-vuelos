@@ -1,4 +1,4 @@
-//Bienvenida
+//Bienvenido
 //3 Productos -> mostrar prod -> que desea comprar?
 //cantidad-> stock -> precio total
 let nombreProductoA = "Hospedaje"
