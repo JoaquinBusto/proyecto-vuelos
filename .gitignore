@@ -1,2 +1,5 @@
+#directorios
 node_modules/
-gitignore
+
+.gitignore
+
