@@ -1,5 +1,4 @@
 //Bienvenida
-let texto = prompt("Ingrese SI para comprar \nIngrese NO para salir")
 //3 Productos -> mostrar prod -> que desea comprar?
 //cantidad-> stock -> precio total
 let nombreProductoA = "Hospedaje"
@@ -12,37 +11,42 @@ let stockProductoB = 3
 
 let nombreProductoC = "Combo hospedaje + vuelo"
 let precioProductoC = 650
-let stockProductoC = 10
+let stockProductoC = 8
 
-//ciclo de compra
-let productoCompra = prompt("ingrese el producto que desea: \n1 - Hospedaje\n2 - Vuelos\n3 - Combo Viaje\n ESC - Salir")
-let precioTotal = 0
-while(opcion != "ESC"){
-if(productoCompra.toUpperCase() == "Hospedaje"){
-    let cantidadProductoHospedaje = prompt("numero de reservas de" + nombreProductoA)
-    if(cantidadProductoHospedaje <= stockProductoA){
-        precioTotal = cantidadProductoHospedaje * precioProductoA
-    }
-    else{
-        alert("Tenemos " + stockProductoA + "habitaciones disponibles")
-    }
+function comprar(){
+    let texto = prompt("Ingrese SI para comprar \nIngrese NO para salir")
+    return texto 
 }
-else if(productoCompra == "Vuelos"){
-    let cantidadProductoVuelos = prompt("numero de reservas de" + nombreProductoB)
-    if(cantidadProductoVuelos <= stockProductoB){
-        precioTotal = cantidadProductoVuelos * precioProductoB
-    }
-    else{
-        alert("Tenemos " + stockProductoB + "vuelos disponibles")
-    }
+function comprasProductos(nombre, stock, precio){
+    let precioTotal = 0
+    let cantidadProducto = parseInt(prompt("numero de reservas de " + nombre))
+        if(cantidadProducto <= stock){
+           precioTotal = precioTotal + (cantidadProducto * precio)
+           alert(precioTotal)
+
+        }
+        else{
+            alert("Hay" + " " + stock + " " + "en stock")
+        }
 }
-else if(productoCompra == "Combo"){
-    let cantidadProductoCombo = prompt("numero de reservas de" + nombreProductoC)
-    if(cantidadProductoCombo <= stockProductoC){
-        precioTotal = cantidadProductoCombo * precioProductoC
+
+while(comprar() !== "NO"){
+    console.log("compra")
+    let opcion = prompt("Ingrese que producto quiere comprar: \n - Hospedaje\n - Vuelos\n - Combo\n ESC salir")
+    let opcionMayuscula = opcion.toUpperCase()
+if(opcion !== "ESC"){
+
+     if(opcionMayuscula === 'HOSPEDAJE'){
+        comprasProductos(nombreProductoA, stockProductoA, precioProductoA)
     }
-    else{
-        alert("Tenemos " + stockProductoC + "combos disponibles")
+    else if(opcionMayuscula === 'VUELOS'){
+        comprasProductos(nombreProductoB, stockProductoB, precioProductoB)
     }
+    else if(opcionMayuscula === 'COMBO'){
+        comprasProductos(nombreProductoC, stockProductoC, precioProductoC)
+    } 
+}else{
+    break
 }
 }
+ alert("Gracias por su visita")
